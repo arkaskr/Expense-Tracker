@@ -1,0 +1,46 @@
+.form {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    justify-content: center;
+    left: 10rem;
+    top: 30%;
+    border: 2px solid black;
+    transform: translate(20%, -40%);
+    border-radius: 12px;
+}
+
+.form label {
+    font-weight: bold;
+}
+
+.input {
+    width: 93%;
+    height: 1.3rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+}
+
+.tranbtn{
+    background-color: #9c88ff;
+    width: 80%;
+    height: 1.3rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.92rem;
+    transition: all 0.2s ease-in-out;
+    align-self: center;
+}
+
+.tranbtn:hover{
+    cursor: pointer;
+  background-color: white;
+  color: #9c88ff;
+  border: 1px solid #9c88ff;
+}

@@ -1,0 +1,45 @@
+.balance{
+    font-size: 1.2rem;
+}
+
+.container {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.incomeExpContainer {
+    background-color: #fff;
+    box-shadow: 5px 5px 15px;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.incomeExpContainer>div {
+    flex: 1;
+    text-align: center;
+}
+
+.incomeExpContainer>div:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+.moneyminus {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin: 0.5rem;
+    color: red;
+}
+
+.moneyplus {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin: 0.5rem;
+    color: green;
+}
