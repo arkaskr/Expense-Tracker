@@ -1,0 +1,79 @@
+.transaction{
+  width: 80%;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  height: 3.25rem;
+  padding-block: 0.25rem;
+  box-shadow: 1px 1px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  margin-left: -2rem;
+}
+
+.item{
+  font-size: 1.2rem;
+}
+
+.amount{
+  margin-right: 10px;
+  transform: translateX(100px);
+  transition: all 0.28s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.profit {
+  border-right: 8px solid rgb(28, 213, 3);
+}
+
+.loss {
+  border-right: 8px solid red;
+}
+
+.movePrice {
+  transform: translateX(0);
+}
+
+.editremove {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.btnContainer{
+  height: 100%;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(110%);
+  display: flex;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.remove img,
+.edit img {
+  padding-top: 0.7rem;
+  width: 30px; 
+  height: 30px; 
+}
+
+.edit,
+.remove {
+  height: 100%;
+  transition: all 0.15s ease-in-out;
+}
+
+.edit:hover,
+.remove:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}

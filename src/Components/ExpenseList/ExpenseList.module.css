@@ -1,0 +1,11 @@
+.container{
+    width: 100%;
+}
+
+.container h3{
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgb(202, 199, 199);
+    margin-bottom: 1rem;
+}
+

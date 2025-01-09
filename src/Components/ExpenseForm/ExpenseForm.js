@@ -1,51 +1,68 @@
 import React, { useState } from "react";
 import styles from "./ExpenseForm.module.css"
 
-export default function ExpenseForm() {
+const ExpenseForm = ({ addExpense }) => {
+  const [item, setItem] = useState("")
+  const [amount, setAmount] = useState("")
 
-    const [item, setItem] = useState("");
-    const [amount, setAmount] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    function handleSubmit(e) {
-        e.preventDefault();
-
-        setItem("");
-        setAmount("");
+    if (parseInt(amount) === 0) {
+      return;
     }
 
-    return (
+    const expense = {
+      item,
+      amount,
+      id: new Date().getTime()
+    };
+    addExpense(expense);
+    clearInput();
+    return;
+  };
 
-        <form className={styles.form} onSubmit={handleSubmit}>
+  const clearInput = () => {
+    setItem("");
+    setAmount("");
+  };
 
-            <h3>Add Transaction</h3>
+  return (
 
-            <label for="expenseon">Text</label>
-            <input
-                className={styles.input}
-                id="expenseon"
-                type="text"
-                placeholder="Expense on What??"
-                required
+    <form className={styles.form} onSubmit={handleSubmit}>
 
-                onChange={(e)=>setItem(e.target.value)}
-            />
+      <h3>Add Transaction</h3>
 
-            <div>
-                <label htmlFor="expenseAmount">Amount</label>
-                <div>(negative - expense,positive-income)</div>
-            </div>
+      <label htmlFor="expenseon">Text</label>
+      <input
+        className={styles.input}
+        id="expenseon"
+        type="text"
+        placeholder="Expense on What??"
+        required
+        value={item}
+        onChange={(e) => setItem(e.target.value)}
+      />
 
-            <input
-            className={styles.input}
-                id="expenseAmount"
-                type="number"
-                placeholder="Enter amount..."
-                required
-                onChange={(e)=>setAmount(e.target.value)}
-            />
+      <div>
+        <label htmlFor="expenseAmount">Amount</label>
+        <div>(negative - expense,positive-income)</div>
+      </div>
 
-            <button className={styles.tranbtn}>Add Transaction</button>
-        </form>
-    )
+      <input
+        className={styles.input}
+        id="expenseAmount"
+        type="number"
+        placeholder="Enter amount..."
+        required
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+      />
+
+      <button className={styles.tranbtn}>Add Transaction</button>
+    </form>
+  )
 
 }
+
+export default ExpenseForm;

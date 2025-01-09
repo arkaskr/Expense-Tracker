@@ -14,13 +14,17 @@
     border-radius: 12px;
 }
 
+.form h3{
+  margin-bottom: 0;
+}
+
 .form label {
     font-weight: bold;
 }
 
 .input {
     width: 93%;
-    height: 1.3rem;
+    height: 1.6rem;
     border: 1px solid gray;
     border-radius: 5px;
     padding-left: 0.5rem;
@@ -29,13 +33,14 @@
 .tranbtn{
     background-color: #9c88ff;
     width: 80%;
-    height: 1.3rem;
+    height: 1.7rem;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 0.92rem;
     transition: all 0.2s ease-in-out;
     align-self: center;
+    margin-bottom: 0.7rem;
 }
 
 .tranbtn:hover{
