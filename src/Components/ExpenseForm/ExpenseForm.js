@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ExpenseForm.module.css"
 
-const ExpenseForm = ({ addExpense }) => {
+const ExpenseForm = ({ addExpense,
+  expenseToUpdate,
+  updateExpense,
+  resetExpenseToUpdate }) => {
+
   const [item, setItem] = useState("")
   const [amount, setAmount] = useState("")
+
+  useEffect(() => {
+    if (!expenseToUpdate) return;
+    setItem(expenseToUpdate.item);
+    setAmount(expenseToUpdate.amount);
+  }, [expenseToUpdate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,14 +22,28 @@ const ExpenseForm = ({ addExpense }) => {
       return;
     }
 
+    if (!expenseToUpdate) {
+      const expense = {
+        item,
+        amount,
+        id: new Date().getTime()
+      };
+      addExpense(expense);
+      clearInput();
+      return;
+    }
+
     const expense = {
       item,
       amount,
-      id: new Date().getTime()
+      id: expenseToUpdate.id
     };
-    addExpense(expense);
+
+    const result = updateExpense(expense);
+    if (!result) return;
     clearInput();
-    return;
+    resetExpenseToUpdate();
+
   };
 
   const clearInput = () => {
@@ -59,7 +83,8 @@ const ExpenseForm = ({ addExpense }) => {
         onChange={(e) => setAmount(e.target.value)}
       />
 
-      <button className={styles.tranbtn}>Add Transaction</button>
+      <button className={styles.tranbtn}>
+        {expenseToUpdate ? "Edit" : "Add"}Transaction</button>
     </form>
   )
 

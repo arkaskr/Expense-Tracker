@@ -3,7 +3,7 @@ import styles from "./Transactions.module.css";
 import EditImage from '../../images/edit.png';
 import RemoveImage from '../../images/trash-bin.png';
 
-const Transactions = ({ expense, deleteExpense, index }) => {
+const Transactions = ({ expense, deleteExpense, changeExpenseToUpdate, index }) => {
     const [currentHoverIndex, setCurrentHoverIndex] = useState(null);
 
     return (
@@ -28,7 +28,7 @@ const Transactions = ({ expense, deleteExpense, index }) => {
 
                 <div className={`${styles.btnContainer} ${currentHoverIndex === index && styles.active}`}>
 
-                    <div className={styles.edit}>
+                    <div className={styles.edit} onClick={() => { changeExpenseToUpdate(expense) }}>
                         <img src={EditImage} height="100%" alt="edit" />
                     </div>
 

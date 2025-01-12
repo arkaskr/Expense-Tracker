@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ExpenseList.module.css";
 import Transactions from '../Transactions/Transactions';
 
-const ExpenseList=({expenses,deleteExpense,changeExpenseToUpdate})=>{
+const ExpenseList = ({ expenses, deleteExpense, changeExpenseToUpdate }) => {
 
     return (
 
@@ -13,7 +13,7 @@ const ExpenseList=({expenses,deleteExpense,changeExpenseToUpdate})=>{
                     return (
                         <Transactions
                             index={i}
-                            key={expense}
+                            key={expense.id}
                             expense={expense}
                             deleteExpense={deleteExpense}
                             changeExpenseToUpdate={changeExpenseToUpdate}

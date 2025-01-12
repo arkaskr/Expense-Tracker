@@ -16,31 +16,31 @@ const ExpenseInfo = ({ expenses }) => {
         return currentExpenseAmount + acc;
     }, 0);
 
-return (
+    return (
 
-    <div className={styles.container}>
-        <div className={styles.balance}>
-            <h4>YOUR BALANCE</h4>
-            <h1>₹{total.toFixed(2)}</h1>
-        </div>
-
-        <div className={styles.incomeExpContainer}>
-            <div>
-                <h4>Income</h4>
-                <p className={styles.moneyplus}>
-                    +₹{profit}
-                </p>
+        <div className={styles.container}>
+            <div className={styles.balance}>
+                <h4>YOUR BALANCE</h4>
+                <h1>₹{total.toFixed(2)}</h1>
             </div>
 
-            <div>
-                <h4>Expense</h4>
-                <p className={styles.moneyminus}>
-                    -₹{loss}
-                </p>
+            <div className={styles.incomeExpContainer}>
+                <div>
+                    <h4>Income</h4>
+                    <p className={styles.moneyplus}>
+                        +₹{profit}
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Expense</h4>
+                    <p className={styles.moneyminus}>
+                        -₹{loss}
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
 };
 
 export default ExpenseInfo;
