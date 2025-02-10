@@ -1,3 +1,9 @@
+@media screen and (max-width: 440px) {
+  .transaction{
+    margin-top: 0.8rem;
+  }
+}
+
 .transaction{
   width: 80%;
   height: 3.2rem;

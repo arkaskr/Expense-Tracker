@@ -1,3 +1,14 @@
+@media screen and (max-width: 440px) {
+    .container h3{
+        margin-left: 2.5rem;
+    }
+
+    .transactionlist{
+        margin-left: 3.3rem;
+        margin-top: 1rem;
+    }
+}
+
 .container{
     width: 100%;
 }

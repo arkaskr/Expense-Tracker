@@ -1,5 +1,24 @@
+@media screen and (max-width: 440px) {
+    .form {
+        position: absolute;
+        margin-top: 3rem;
+        margin-left: -9.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        padding-left: 1.5rem;
+        justify-content: center;
+        top: 30%;
+        border: 2px solid black;
+        transform: translate(20%, -40%);
+        border-radius: 12px;
+    }
+}
+
 .form {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -14,8 +33,8 @@
     border-radius: 12px;
 }
 
-.form h3{
-  margin-bottom: 0;
+.form h3 {
+    margin-bottom: 0;
 }
 
 .form label {
@@ -30,7 +49,7 @@
     padding-left: 0.5rem;
 }
 
-.tranbtn{
+.tranbtn {
     background-color: #9c88ff;
     width: 80%;
     height: 1.7rem;
@@ -43,9 +62,9 @@
     margin-bottom: 0.7rem;
 }
 
-.tranbtn:hover{
+.tranbtn:hover {
     cursor: pointer;
-  background-color: white;
-  color: #9c88ff;
-  border: 1px solid #9c88ff;
+    background-color: white;
+    color: #9c88ff;
+    border: 1px solid #9c88ff;
 }

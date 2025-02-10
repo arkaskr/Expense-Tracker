@@ -21,7 +21,9 @@ const ExpenseInfo = ({ expenses }) => {
         <div className={styles.container}>
             <div className={styles.balance}>
                 <h4>YOUR BALANCE</h4>
-                <h1>₹{total.toFixed(2)}</h1>
+                <h1 
+                    className={`${total > 0 ? styles.profit : styles.loss}`}
+                >₹{total.toFixed(2)}</h1>
             </div>
 
             <div className={styles.incomeExpContainer}>
