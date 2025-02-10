@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import styles from "./ExpenseForm.module.css"
+import styles from "./ExpenseForm.module.css";
+import { db } from "../../FirebaseInit";
+import { collection, addDoc, onSnapshot, updateDoc, doc } from "firebase/firestore";
 
-const ExpenseForm = ({ addExpense,
-  expenseToUpdate,
-  updateExpense,
-  resetExpenseToUpdate }) => {
-
-  const [item, setItem] = useState("")
-  const [amount, setAmount] = useState("")
+const ExpenseForm = ({ addExpense, expenseToUpdate, updateExpense, resetExpenseToUpdate }) => {
+  const [item, setItem] = useState("");
+  const [amount, setAmount] = useState("");
 
   useEffect(() => {
     if (!expenseToUpdate) return;
@@ -15,35 +13,67 @@ const ExpenseForm = ({ addExpense,
     setAmount(expenseToUpdate.amount);
   }, [expenseToUpdate]);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, "expenses"), (snapShot) => {
+      const expenses = snapShot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      })
+
+      expenses.forEach(expense => addExpense(expense));
+    });
+
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (parseInt(amount) === 0) {
+    if (parseInt(amount) === 0) return;
+
+    if (expenseToUpdate) {
+      const docRef = doc(db, "expenses", expenseToUpdate.id);
+      try {
+        await updateDoc(docRef, {
+          item,
+          amount: parseInt(amount),
+          createdOn: new Date().getTime(),
+        });
+
+        const updatedExpense = {
+          item,
+          amount,
+          id: expenseToUpdate.id,
+        };
+
+        updateExpense(updatedExpense);
+        resetExpenseToUpdate();
+      } catch (error) {
+        console.error("Error updating expense: ", error);
+      }
       return;
     }
 
-    if (!expenseToUpdate) {
-      const expense = {
+
+    try {
+      const docRef = await addDoc(collection(db, "expenses"), {
+        item,
+        amount: parseInt(amount),
+        createdOn: new Date().getTime(),
+      });
+
+      const newExpense = {
         item,
         amount,
-        id: new Date().getTime()
+        id: docRef.id,
       };
-      addExpense(expense);
+
+      addExpense(newExpense);
       clearInput();
-      return;
+    } catch (error) {
+      console.error("Error adding expense: ", error);
     }
-
-    const expense = {
-      item,
-      amount,
-      id: expenseToUpdate.id
-    };
-
-    const result = updateExpense(expense);
-    if (!result) return;
-    clearInput();
-    resetExpenseToUpdate();
-
   };
 
   const clearInput = () => {
@@ -84,10 +114,9 @@ const ExpenseForm = ({ addExpense,
       />
 
       <button className={styles.tranbtn}>
-        {expenseToUpdate ? "Edit" : "Add"}Transaction</button>
+        {expenseToUpdate ? "Edit " : "Add "}Transaction</button>
     </form>
   )
-
-}
+};
 
 export default ExpenseForm;
