@@ -1,4 +1,4 @@
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 430px) {
     .form {
         position: absolute;
         margin-top: 3rem;
@@ -15,6 +15,26 @@
         transform: translate(20%, -40%);
         border-radius: 12px;
     }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .form{
+        position: absolute;
+        margin-left: -5rem;
+        margin-top: 3rem;
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+
+    .form{
+        position: absolute;
+        margin-left: -4rem;
+        margin-top: 5rem;
+    }
+
 }
 
 .form {

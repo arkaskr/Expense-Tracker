@@ -1,4 +1,4 @@
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 430px) {
     .container {
         margin-top: 21rem;
         margin-left: 2.2rem;
@@ -30,6 +30,19 @@
         margin-left: 1.2rem;
     }
 }
+
+@media screen and (min-width: 1200px) {
+
+    .container{
+        margin-left: 4rem;
+        margin-top: -1rem;
+    }
+    .incomeExpContainer{
+        margin-left: -0.6rem;
+    }
+
+}
+
 
 .balance {
     font-size: 1.2rem;

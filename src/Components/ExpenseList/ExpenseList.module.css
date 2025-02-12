@@ -1,4 +1,4 @@
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 430px) {
     .container h3{
         margin-left: 2.5rem;
     }
@@ -7,6 +7,19 @@
         margin-left: 3.3rem;
         margin-top: 1rem;
     }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .container h3{
+        margin-left: 1rem;
+    }
+
+    .transactionlist{
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
 }
 
 .container{

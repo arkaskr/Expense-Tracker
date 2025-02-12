@@ -30,14 +30,14 @@ const ExpenseInfo = ({ expenses }) => {
                 <div>
                     <h4>Income</h4>
                     <p className={styles.moneyplus}>
-                        +₹{profit}
+                        ₹{profit}
                     </p>
                 </div>
 
                 <div>
                     <h4>Expense</h4>
                     <p className={styles.moneyminus}>
-                        -₹{loss}
+                        ₹{loss}
                     </p>
                 </div>
             </div>

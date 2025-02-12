@@ -1,7 +1,15 @@
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 430px) {max
   .transaction{
     margin-top: 0.8rem;
   }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .transaction{
+    margin-top: 0.8rem;
+  }
+
 }
 
 .transaction{
