@@ -1,7 +1,6 @@
 @media screen and (max-width: 430px) {
     .container {
         margin-top: 21rem;
-        margin-left: 2.2rem;
         width: 100%;
         padding: 1rem;
         display: flex;

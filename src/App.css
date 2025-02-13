@@ -1,20 +1,27 @@
-@media screen and (max-width: 440px) {
-    .heading{
+@media screen and (max-width: 430px) {
+    .heading {
         width: 27rem;
     }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
 }
 
-.heading{
+.heading {
     text-align: center;
     font-size: 3rem;
     margin-bottom: -3rem;
 }
 
-.expense{
+.expense {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 6rem auto;
     width: 25rem;
-  }
+}

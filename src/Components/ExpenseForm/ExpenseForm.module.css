@@ -1,21 +1,9 @@
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 430px){
     .form {
-        position: absolute;
-        margin-top: 3rem;
         margin-left: -9.8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1rem;
-        padding-left: 1.5rem;
-        justify-content: center;
-        top: 30%;
-        border: 2px solid black;
-        transform: translate(20%, -40%);
-        border-radius: 12px;
     }
 }
+
 
 @media screen and (min-width: 1200px) {
 
@@ -47,7 +35,7 @@
     padding-left: 1.5rem;
     justify-content: center;
     left: 10rem;
-    top: 30%;
+    top: 32%;
     border: 2px solid black;
     transform: translate(20%, -40%);
     border-radius: 12px;
