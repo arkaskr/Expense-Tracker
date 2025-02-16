@@ -1,12 +1,13 @@
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 450px) {
     .container h3{
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-        padding-left: 1.5rem;
+        margin-right: 1.8rem;
+        padding-left: 0.8rem;
+        margin-left: -0.5rem;
     }
 
     .transactionlist{
-        margin-left: 1.5rem;
+        margin-left: -0.7rem;
+        margin-right: 1.2rem;
         margin-top: 1rem;
     }
 }
@@ -25,11 +26,12 @@
 }
 
 .container{
-    width: 100%;
+    width: 90%;
+    margin-left: 2rem;
 }
 
 .container h3{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgb(202, 199, 199);
     margin-bottom: 1rem;

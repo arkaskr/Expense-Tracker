@@ -82,7 +82,7 @@ const ExpenseForm = ({ addExpense, expenseToUpdate, updateExpense, resetExpenseT
   };
 
   return (
-
+    <div className={styles.container}>
     <form className={styles.form} onSubmit={handleSubmit}>
 
       <h3>Add Transaction</h3>
@@ -98,7 +98,7 @@ const ExpenseForm = ({ addExpense, expenseToUpdate, updateExpense, resetExpenseT
         onChange={(e) => setItem(e.target.value)}
       />
 
-      <div>
+      <div >
         <label htmlFor="expenseAmount">Amount</label>
         <div>(negative - expense,positive-income)</div>
       </div>
@@ -116,6 +116,7 @@ const ExpenseForm = ({ addExpense, expenseToUpdate, updateExpense, resetExpenseT
       <button className={styles.tranbtn}>
         {expenseToUpdate ? "Edit " : "Add "}Transaction</button>
     </form>
+    </div>
   )
 };
 

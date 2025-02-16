@@ -1,44 +1,27 @@
-@media screen and (max-width: 430px){
-    .form {
-        margin-left: -9.8rem;
-    }
+/* Main container - Centers the form */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 20px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
-
-@media screen and (min-width: 1200px) {
-
-    .form{
-        position: absolute;
-        margin-left: -5rem;
-        margin-top: 3rem;
-    }
-
-}
-
-@media screen and (min-width: 1500px) {
-
-    .form{
-        position: absolute;
-        margin-left: -4rem;
-        margin-top: 5rem;
-    }
-
-}
-
+/* Form styling */
 .form {
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1rem;
-    padding-left: 1.5rem;
-    justify-content: center;
-    left: 10rem;
-    top: 32%;
+    padding: 1.5rem;
     border: 2px solid black;
-    transform: translate(20%, -40%);
     border-radius: 12px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
 .form h3 {
@@ -47,32 +30,57 @@
 
 .form label {
     font-weight: bold;
+    align-self: flex-start;
 }
 
+/* Input fields */
 .input {
-    width: 93%;
-    height: 1.6rem;
+    width: 96.5%;
+    height: 1.8rem;
     border: 1px solid gray;
     border-radius: 5px;
     padding-left: 0.5rem;
 }
 
+/* Transaction Button */
 .tranbtn {
     background-color: #9c88ff;
+    margin-left: 2rem;
     width: 80%;
-    height: 1.7rem;
+    height: 2rem;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 0.92rem;
+    font-size: 1rem;
     transition: all 0.2s ease-in-out;
-    align-self: center;
-    margin-bottom: 0.7rem;
+    cursor: pointer;
 }
 
 .tranbtn:hover {
-    cursor: pointer;
     background-color: white;
     color: #9c88ff;
     border: 1px solid #9c88ff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 450px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .form {
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .form {
+        max-width: 300px;
+    }
 }
